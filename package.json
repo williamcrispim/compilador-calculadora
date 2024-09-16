@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build-gramatica": "pegjs gramatica.pegjs"
+    "build-gramatica": "pegjs gramatica.pegjs",
+    "app": "pegjs gramatica.pegjs && node index.js"
   },
   "keywords": [],
   "author": "",
