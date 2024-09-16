@@ -144,6 +144,7 @@ function peg$parse(input, options) {
       peg$c0 = ":=",
       peg$c1 = peg$literalExpectation(":=", false),
       peg$c2 = function(variableName, expr) {
+            // Retorna um objeto representando uma atribuição
             return { type: "assignment", variable: variableName, value: expr };
           },
       peg$c3 = "+",
@@ -151,6 +152,7 @@ function peg$parse(input, options) {
       peg$c5 = "-",
       peg$c6 = peg$literalExpectation("-", false),
       peg$c7 = function(head, tail) {
+            // Retorna um objeto expressão com a cabeça e a cauda da expressão
             return { type: "expression", value: head, tail: tail };
           },
       peg$c8 = "*",
@@ -158,6 +160,7 @@ function peg$parse(input, options) {
       peg$c10 = "/",
       peg$c11 = peg$literalExpectation("/", false),
       peg$c12 = function(head, tail) {
+            // Retorna um objeto termo com a cabeça e a cauda do termo
             return { type: "term", value: head, tail: tail };
           },
       peg$c13 = "(",
@@ -170,14 +173,14 @@ function peg$parse(input, options) {
       peg$c20 = ".",
       peg$c21 = peg$literalExpectation(".", false),
       peg$c22 = function() {
-            return parseFloat(text());
+            return parseFloat(text());  // Converte a string capturada para número
           },
       peg$c23 = /^[a-zA-Z_]/,
       peg$c24 = peg$classExpectation([["a", "z"], ["A", "Z"], "_"], false, false),
       peg$c25 = /^[a-zA-Z0-9_]/,
       peg$c26 = peg$classExpectation([["a", "z"], ["A", "Z"], ["0", "9"], "_"], false, false),
       peg$c27 = function() {
-            return text();  // Retorna diretamente a string capturada
+            return text();  // Retorna a string capturada como nome da variável
           },
       peg$c28 = peg$otherExpectation("whitespace"),
       peg$c29 = /^[ \t\n\r]/,
