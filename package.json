@@ -1,0 +1,15 @@
+{
+  "name": "compilador-calculadora",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build-gramatica": "pegjs gramatica.pegjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "pegjs": "^0.10.0"
+  }
+}
